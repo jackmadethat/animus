@@ -1,0 +1,320 @@
+@import "variables";
+@import "containers";
+
+* {
+	box-sizing: border-box;
+	font-family: 'Kode Mono';
+}
+
+body {
+	overflow-y: scroll;
+}
+
+p {
+	font-size: 0.85em;
+}
+
+h3 {
+	font-weight: 10;
+}
+
+thead {
+	font-size: 0.7em;
+}
+
+button, .button {
+	display: inline-block;
+	padding: 0.5em;
+	margin: 0 0.3em 0.3em 0;
+	border-radius: 0.4em;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.8em;
+	border: 1px solid black;
+	transition: all 0.2s;
+	background-color: $buttonlight;
+	box-shadow: -1px 1px 5px -1px rgba(0,0,0,0.5);
+
+	&:hover {
+		background-color: $buttondark;
+		box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25) inset;
+	}
+}
+
+input[type="submit"] {
+	margin-top: 15px;
+	width: 200px;
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sessionStatus {
+	@extend .center;
+	margin-top: -20px;
+	font-size: 0.7em;
+}
+
+.mainHeading {
+	@extend .center;
+	font-weight: 10;
+}
+
+.tooltip {
+	@extend .center;
+	width: 350px;
+	font-size: 0.7em;
+	margin-top: -15px;
+}
+
+.footer {
+  	text-align: center;
+	font-size: 0.65em;
+	color: rgba(0,0,0,0.2);
+}
+
+.nav {
+	@extend .center;
+	font-size: 0.9em;
+	display: flex;
+	justify-content: center;
+	list-style-type: none;
+	overflow: hidden;
+	background-color: white;
+  
+	a {
+		float: left;
+		border-right: 1px solid #bbb;
+		width: 80px;
+		text-align: center;
+		display: block;
+		color: black;
+		background-color: white;
+		padding: 5px;
+		text-decoration: none;
+		font-size: 0.75em;
+		z-index: 50;
+		transition: all 0.3s;
+  
+		&:hover {
+			background-color: $greydark;
+			box-shadow: inset 0px 11px 8px -10px rgba(0,0,0,0.4), inset 0px -11px 8px -10px rgba(0,0,0,0.4); 
+		}
+  
+		&:last-of-type {
+			border-right: none;
+			border-left: none;
+		}
+	}
+}
+
+.workoutButton {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: white;
+	border-color: red;
+
+	&:hover {
+		background-color: #ff000059;
+		box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.25) inset;
+	}
+}
+
+.xButton {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	position: absolute;
+	transition: all 0s;
+}
+
+.pinButton {
+	position: absolute;
+	text-align: right;
+	transition: all 0s;
+}
+  
+.pinButtonAlt {
+	position: absolute;
+	text-align: right;
+	transition: all 0s;
+}
+
+.warriorButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_warrior.png);
+	background-size: 76px 76px;
+}
+
+.spartanButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_spartan.png);
+	background-size: 76px 76px;
+}
+
+.nomadButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_nomad.png);
+	background-size: 76px 76px;
+}
+
+.monkButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_monk.png);
+	background-size: 76px 76px;
+}
+
+.survivorButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_survivor.png);
+	background-size: 76px 76px;
+}
+
+.beastButton {
+	@extend .workoutButton;
+	background-image: url(https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/refs/heads/main/img/animus/icon_beast.png);
+	background-size: 76px 76px;
+}
+
+.container {
+	@extend .center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0px;
+	max-width: 800px;
+	padding-bottom: 10px;
+	//border: 1px solid red;
+}
+
+.col-single {
+	flex: 100%;
+	max-width: 900px;
+	padding: 5px;
+}
+
+.col-half {
+	flex: 49%;
+	max-width: 800px;
+	padding: 5px;
+}
+
+.col-third {
+	flex: 32%;
+	max-width: 310px;
+	padding: 5px;
+}
+
+// Media Rules
+
+@media (min-width: 800px) { // Largest Window Size
+	.progress-container {
+		max-width: 800px;
+	}
+
+	.timer-container {
+		transform: scale(1);
+		margin-left: -300px;
+		margin-top: 40px;
+	}
+
+	.statsContainer {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.xButton {
+		margin-top: -49px;
+		margin-left: 320px;
+	} 
+	
+	.pinButton {
+		margin-top: -50px;
+		margin-left: 205px;
+	}
+
+	.pinButtonAlt {
+		margin-top: -50px;
+		margin-left: 250px;
+	}
+
+	.container-adjust {
+		margin-top: 680px;
+	}
+}
+
+@media (max-width: 800px) { // Smallest Window Size	
+	.timer-container {
+		transform: scale(0.75);
+		margin-left: -300px;
+		margin-top: -50px;
+	}
+
+	.xButton {
+		margin-top: -50px;
+		margin-right: 12px;
+		right: 0;
+	}
+	
+	.pinButton {
+		right: 0;
+		margin-top: -51px;
+		margin-right: 50px;
+	}
+
+	.pinButtonAlt {
+		right: 0;
+		margin-top: -51px;
+		margin-right: 50px;
+	}
+
+	.container {
+		max-width: 600px;
+
+		p {
+			max-width: 370px;
+		}
+	}
+
+	.col-single {
+		flex: 100%;
+		max-width: 400px;
+	}
+
+	.col-half {
+		flex: 100%;
+		max-width: 400px;
+	}
+
+	.col-third {
+		flex: 100%;
+		max-width: 400px;
+	}
+
+	.container-adjust {
+		margin-top: 520px;
+	}
+
+	.nutrition-plans {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.shred, .balance {
+		width: 380px;
+		margin: 20px;
+		height: 180px;
+	}
+
+	.staminaButtons {
+		margin-top: 35px;
+	}
+}

@@ -1,0 +1,485 @@
+@import "variables";
+
+.login-container {
+	max-width: 400px;
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		input {
+			text-align: center;
+			padding: 5px;
+			width: 300px;
+			margin-left: 50px;
+		}
+
+		label {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		select, option {
+			text-align: center;
+			width: 300px;
+			margin-left: 50px;
+		}
+	}
+
+	div + button {
+		text-align: center;
+		width: 50%;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	div {
+		grid-column: 1 / -1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 15px;
+
+		button + button {
+			margin-top: 10px;
+		}
+	}
+
+	button {
+		width: 50%;
+	}
+}
+
+.profile-container {
+	max-width: 400px;
+
+	.dataDiv {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 10px;
+
+		.leftSide {
+			text-align: right;
+			padding-right: 5px;
+			margin-top: 3px;
+			margin-bottom: 3px;
+		}
+
+		.rightSide {
+			text-align: left;
+			padding-left: 5px;
+			margin-top: 3px;
+			margin-bottom: 3px;
+		}
+
+		.centered {
+			grid-column: 1 / 3;
+ 			text-align: center;
+		}
+	}
+
+	.buttonDiv {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.confirmButtons {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.confirm-cancel {
+			width: 100px;
+		}
+
+		button {
+			width: 50%;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		input {
+			width: 50%;
+			text-align: center;
+			padding: 5px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+	}
+
+	select {
+		font-family: 'Kode Mono';
+	}
+
+	option {
+		font-family: 'Kode Mono';
+	}
+}
+
+.progress-container {
+	max-width: 400px;
+	display: grid;
+	grid-template-columns: 1fr;
+
+	table {
+		table-layout: fixed;
+		border-collapse: collapse;
+		border: 2px solid black;
+		grid-column: 1;
+		grid-row: 1;
+		margin-top: 4px;
+		width: 100%;
+	}
+
+	th {
+		font-weight: bold;
+		border: 1px solid black;
+		border-bottom: 2px solid black;
+		background-color: $greydark;
+	}
+
+	td {
+		border: 1px solid black;
+		padding: 10px;
+	}
+
+	tr {
+		&:nth-child(even) {
+			//background-color: #55555511;
+			background-color: $transred;
+		}
+		&:nth-child(odd) {
+			background-color: white;
+		}
+	}
+
+	.data-container {
+		align-items: center;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		width: 100%;
+	}
+
+	.confirm-delete {
+		display: flex;
+		flex-direction: column;
+		margin-top: 3px;
+	}
+
+	.delete {
+		@extend .center;
+		display: flex;
+		flex-direction: column;
+		width: 200px;
+	}
+
+	.confirm-delete, .delete-action {
+		grid-column: 2;
+	}
+
+	.enterDataButton {
+		button {
+			width: 100%;
+			max-width: 200px;
+			margin: 15px auto;
+		}
+	}
+}
+
+.setuptimer-container {
+	width: 400px;
+	margin-top: -450px;
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 10px;
+
+		input {
+			text-align: center;
+			padding: 5px;
+		}
+
+		label {
+			text-align: right;
+			padding-right: 5px;
+		}
+
+		input, label {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		select, option {
+			text-align: center;
+		}
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	button {
+		width: 50%;
+		margin: 5px auto;
+	}
+}
+
+.timer-container {
+	background-image: url("https://raw.githubusercontent.com/jackmadethat/jackmadethat.github.io/main/img/animus/Animus_ClockFace.png");
+	border: 1px solid black;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 600px;
+	height: 600px;
+	margin-top: 30px;
+	z-index: 5;
+
+	.timerData {
+		//border: 1px solid blue;
+		width: 400px;
+		height: 300px;
+		margin-left: 100px;
+		margin-top: -470px;
+	}
+
+	.sessionTracker {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		width: 200px;
+		margin-left: 100px;
+		margin-top: 30px;
+		margin-bottom: -20px;
+	}
+
+	.sessionNumber {
+		font-size: 30px;
+		margin-top: -17px;
+	}
+
+	.mainClock {
+		font-size: 80px;
+	}
+
+	.statusText {
+		margin-top: 10px;
+		font-size: 18px;
+	}
+
+	.sessionStatus {
+		position: relative;
+		margin-left: -40px;
+		margin-top: -300px;
+		font-size: 12px;
+		transform: scale(0.75);
+
+		td {
+			text-align: center;
+		}
+	}
+
+	.timeStatus {
+		position: relative;
+		margin-left: 275px;
+		// margin-top: -131px; < Level with other side
+		margin-top: -126px;
+		font-size: 12px;
+		width: 220px;
+		transform: scale(0.75);
+
+		td {
+			text-align: center;
+		}
+	}
+
+	.timerButtons {
+		margin-top: 30px;
+	}
+
+	button {
+		width: 100px;
+	}
+
+	.clock {
+		position: relative;
+		border-radius: 50%;
+		width: 103%;
+		height: 103%;
+		left: -9px;
+		z-index: -1;
+		margin-top: -595px;
+	}
+	
+	.major {
+		height: 3%;
+		width: 1%;
+		position: absolute;
+		background: black;
+		left: 49.5%;
+		top: 0px;
+		transform-origin: center calc(5000% / 3);
+	}
+	
+	.minor {
+		height: 60%;
+		width: 50%;
+		position: absolute;
+		background: black;
+		left: 0px;
+		top: 0px;
+		transform-origin: center calc(100 / 60 * 5000% / 3);
+	}
+	
+	$major-classes: one two three four five six seven eight nine ten eleven twelve;
+	$minor-classes: one two three four five six seven eight nine;
+	
+	.major {
+		  @each $class in $major-classes {
+			   &.#{$class} {
+				  $index: index($major-classes, $class);
+				  transform: rotate(30deg * $index);
+				  > .numeral {
+					   transform: rotate(-30deg * $index);
+				  }
+			}
+		  }
+	}
+	
+	.minor {
+		  @each $class in $minor-classes {
+			&.minor-#{$class} {
+				$index: index($minor-classes, $class);
+				transform: rotate(3deg * $index);
+			}
+		  }
+	}
+
+	.intervalprogress {
+		width: 600px;
+		height: 600px;
+		position: relative;
+		border: black 1px solid;
+		border-radius: 50%;
+		z-index: -1;
+		margin-left: -1px;
+		//border: 1px solid blue;
+	}
+	
+	.setprogress {
+		width: 574px;
+		height: 574px;
+		position: relative;
+		border-radius: 50%;
+		z-index: -1;
+		margin-top: -587px;
+		margin-left: 12px;
+		//border: 1px solid orange;
+	}
+}
+
+.logform {
+	display: grid; 
+	grid-template-columns: 1fr 1fr; 
+	margin-top: 15px;
+
+	label {
+		text-align: right;
+		margin-right: 10px;
+		margin-top: 5px;
+	}
+
+	input {
+		width: 100px;
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+}
+
+.info-container {
+	.tr-fixed {
+		height: 40px;
+	}
+	
+	table {
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	
+	th {
+		font-weight: bold;
+		border: 2px solid black;
+		background-color: $greydark;
+	}
+	
+	td {
+		font-weight: lighter;
+		border: 1px solid black;
+	}
+	
+	tr {
+		&:nth-child(even) {
+			background-color: $transred;
+		}
+		&:nth-child(odd) {
+			background-color: $greylight;
+		}
+	}
+}
+
+.graphContainer {
+	width: 100%;
+}
+
+.tableContainer {
+	width: 100%;
+	height: 250px;
+
+	table {
+		margin-top: 15px;
+	}
+}
+
+.nutrition-container {
+	@extend .profile-container;
+	max-width: 750px;
+
+	.nutrition-plans {
+		display: flex;
+		justify-content: space-around;
+	}
+	  
+	.shred, .balance {
+		width: 380px;
+		margin: 20px;
+		padding: 20px;
+		border: 1px solid #000000;
+		border-radius: 5px;
+		box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+	}
+
+	.balance {
+		margin-bottom: 29px; // Very strange sizing issue
+	}
+}
+
+.progress-container,
+.info-container, 
+.nutrition-container,
+.timer-container,
+.profile-container,
+.login-container,
+.profiledata-container,
+.setuptimer-container
+{
+	@extend .center;
+}

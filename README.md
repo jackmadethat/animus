@@ -8,7 +8,7 @@ Submitted as a personal project to boot.dev
 
 ## Login
 
-Make your own account or log in with
+Make your own account or log in with:
 
 Name: Guest
 Password: password1
@@ -26,3 +26,8 @@ Password: password1
 - Better integration of workouts with timer
 - Better designed profile page
 - Add calendar to track and schedule workout and rest days
+
+## Bugs
+
+- App doesn't keep phones and tablets awake, requiring screen taps. The animated logo fixes this in some cases, and I couldn't make keepawake work properly.
+- Audio in the timer can bug out on some machines and in some browsers, need a workaround to disable audio if this is the case.
